@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture Game</title>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MediaPipe Hands -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.js" crossorigin="anonymous"></script>
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href = "style.css" rel = "stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-200 flex items-center justify-center min-h-screen">
+
+    <div class="video-container">
+        <video id="video-feed" playsinline></video>
+    </div>
+
+    <div class="game-container">
+        <div class="game-header">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-green-400">Hand-Controlled Ball</h1>
+            <div class="text-xl md:text-2xl font-bold">Score: <span id="score-value">0</span></div>
+        </div>
+        <canvas id="game-canvas"></canvas>
+
+        <!-- Overlay for instructions and game over -->
+        <div id="overlay" class="overlay">
+            <div id="message-box" class="message-box">
+                <p id="message-text" class="text-lg md:text-xl text-center mb-4">
+                    Loading hand tracking models...
+                </p>
+                <button id="start-button" class="button hidden">Start Game</button>
+            </div>
+        </div>
+    </div>
+    <script src = "script.js"></script>
+</body>
+</html>
 
